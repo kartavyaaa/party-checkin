@@ -1,11 +1,13 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
-
+import os
 from app.config import DATABASE_PATH
 
-DATABASE_URL = f"sqlite:///{DATABASE_PATH}"
-
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "sqlite:///data/attendees.db"
+)
 engine = create_engine(
     DATABASE_URL,
     connect_args={"check_same_thread": False}
