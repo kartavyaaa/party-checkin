@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance Dashboard</title>
+
+    <link rel="stylesheet" href="/static/styles.css">
+
+    <style>
+
+        body{
+            padding:30px;
+            display:block;
+            background:#0b1120;
+            color:white;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        h1{
+            margin-bottom:25px;
+        }
+
+        .stats{
+            display:flex;
+            gap:20px;
+            flex-wrap:wrap;
+            margin-bottom:30px;
+        }
+
+        .card{
+            background:#111827;
+            padding:20px;
+            border-radius:12px;
+            min-width:180px;
+            text-align:center;
+        }
+
+        .card h2{
+            margin:0;
+            font-size:34px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:#111827;
+            border-radius:12px;
+            overflow:hidden;
+        }
+
+        th,td{
+            padding:14px;
+            text-align:left;
+            border-bottom:1px solid #2b3444;
+        }
+
+        th{
+            background:#1f2937;
+        }
+
+        tr:hover{
+            background:#1b2435;
+        }
+
+        .yes{
+            color:#22c55e;
+            font-weight:bold;
+        }
+
+        .no{
+            color:#ef4444;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>🎉 Mid Year Team Get Together - Attendance</h1>
+
+<div class="stats">
+
+    <div class="card">
+        <h2 id="total">0</h2>
+        Total RSVP
+    </div>
+
+    <div class="card">
+        <h2 id="checked">0</h2>
+        Checked In
+    </div>
+
+    <div class="card">
+        <h2 id="pending">0</h2>
+        Pending
+    </div>
+
+    <div class="card">
+        <h2 id="walkins">0</h2>
+        Walk-Ins
+    </div>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Signum</th>
+
+<th>Status</th>
+
+<th>Time</th>
+
+<th>Source</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tableBody">
+
+</tbody>
+
+</table>
+
+<script src="/static/admin.js"></script>
+
+</body>
+
+</html>
