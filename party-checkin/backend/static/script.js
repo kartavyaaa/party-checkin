@@ -101,7 +101,17 @@ async function confirmCheckin() {
         <br>
 
         <h3>Enjoy the party 🎉</h3>
+        
     `;
+    setTimeout(() => {
+
+        document.getElementById("signum").value = "";
+
+        document.getElementById("result").innerHTML = "";
+
+        document.getElementById("signum").focus();
+
+    }, 2000);
 }
 
 async function registerWalkin() {
@@ -154,4 +164,14 @@ async function registerWalkin() {
 
         <h3>Enjoy the party 🎉</h3>
     `;
+
+    setTimeout(() => {
+
+        document.getElementById("signum").value = "";
+
+        document.getElementById("result").innerHTML = "";
+
+        document.getElementById("signum").focus();
+
+    }, 2000);
 }
