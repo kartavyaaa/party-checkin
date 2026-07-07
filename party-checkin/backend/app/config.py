@@ -1,11 +1,10 @@
-from pathlib import Path
+import os
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+from dotenv import load_dotenv
 
-DATABASE_PATH = BASE_DIR / "data" / "attendees.db"
+load_dotenv()
 
-EVENT_NAME = "Mid Year Team Get Together"
-
-CHECKIN_START = "18:30"
-
-CHECKIN_END = "22:00"
+ADMIN_PASSWORD = os.getenv(
+    "ADMIN_PASSWORD",
+    "bandar123"
+)

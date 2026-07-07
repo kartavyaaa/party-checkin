@@ -67,6 +67,15 @@ async function lookup() {
             <p>${data.checkin_time}</p>
         `;
 
+        setTimeout(() => {
+
+            document.getElementById("signum").value = "";
+            document.getElementById("result").innerHTML = "";
+            currentSignum = "";
+            document.getElementById("signum").focus();
+
+        }, 2000);
+
         return;
     }
 
@@ -101,14 +110,13 @@ async function confirmCheckin() {
         <br>
 
         <h3>Enjoy the party 🎉</h3>
-        
     `;
+
     setTimeout(() => {
 
         document.getElementById("signum").value = "";
-
         document.getElementById("result").innerHTML = "";
-
+        currentSignum = "";
         document.getElementById("signum").focus();
 
     }, 2000);
@@ -168,9 +176,8 @@ async function registerWalkin() {
     setTimeout(() => {
 
         document.getElementById("signum").value = "";
-
         document.getElementById("result").innerHTML = "";
-
+        currentSignum = "";
         document.getElementById("signum").focus();
 
     }, 2000);

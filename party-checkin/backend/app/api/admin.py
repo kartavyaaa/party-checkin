@@ -3,12 +3,24 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.models.attendee import Attendee
+from fastapi import Header
+from fastapi import HTTPException
 
+from app.config import ADMIN_PASSWORD
 router = APIRouter(prefix="/admin", tags=["Admin"])
 
 
 @router.get("/summary")
-def summary(db: Session = Depends(get_db)):
+def summary(
+    password: str = Header(None),
+    db: Session = Depends(get_db)
+):
+    if password != ADMIN_PASSWORD:
+
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid password."
+        )
 
     attendees = db.query(Attendee).all()
 
